@@ -1,0 +1,39 @@
+:root {
+  --font: "Chivo Mono", monospace;
+  --primary: rgb(255, 196, 0);
+}
+
+form {
+  width: 450px;
+  height: 300px;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+input {
+  height: 30px;
+  margin-bottom: 8px;
+}
+input,
+textarea {
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid var(--primary);
+  background-color: transparent;
+  color: #fff;
+  caret-color: var(--primary);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+button {
+  padding: 10px 15px;
+  background-color: var(--primary);
+  color: black;
+  font-size: 15px;
+  border: 0.5px solid black;
+  cursor: pointer;
+  margin-top: 40px;
+}
