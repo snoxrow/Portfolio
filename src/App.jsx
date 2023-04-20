@@ -1,3 +1,4 @@
+
 import Navbar from "./components/Navbar";
 import Project from "./components/Project";
 import cardForm from "./assets/Card-Form.webp";
@@ -5,8 +6,15 @@ import weather from "./assets/weather-app.png";
 import todoapp from "./assets/TodoApp.jpeg";
 import pricing from "./assets/pricing-plan.png";
 import Form from "./components/Form";
+import refHook from "./components/refHook";
+import icon from "./assets/github-icon.png";
 
 function App() {
+  const [ref, isIntersecting] = refHook( {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2,
+  });
   return (
     <div className="container">
       <Navbar />
@@ -21,6 +29,10 @@ function App() {
             Based in Hungary, I'm an aspiring web developer that enjoys
             designing and creating websites.
           </p>
+
+          <div className="social">
+            <a href="https://github.com/snoxrow" target="_blank"><img src={icon} alt="" /></a>
+          </div>
         </section>
         <section id="about">
           <h1>My Experiences</h1>
@@ -76,19 +88,26 @@ function App() {
             prev="https://snoxrow.github.io/Pricing-Plans/"
           />
         </section>
-        <section id="more">
-          <h1>About <span>me</span> </h1>
-          <p id="p1" >
+        <section ref={ref} id="more">
+          <h1 >
+            About <span>me</span>{" "}
+          </h1>
+          <p className={isIntersecting ? "type" : " "} id="p1">
             After graduating with a degree in biology, I quickly realised it was
-            not meant for me. </p>
-            <p id="p2" >
+            not meant for me.{" "}
+          </p>
+          <p className={isIntersecting ? "type" : " "} id="p2">
             Thats when I decided to give coding a shot, and I fell in love with
-            it.</p>
-            <p id="p3" >
-            Ever since I've been working on learning new languages and growing my experiences.</p>
-            
-            <p id="p4" >Learning new and
-            exciting stuff everyday keeps me motivated towards my goal.
+            it.
+          </p>
+          <p className={isIntersecting ? "type" : " "} id="p3">
+            Ever since I've been working on learning new languages and growing
+            my experiences.
+          </p>
+
+          <p className={isIntersecting ? "type" : " "} id="p4">
+            Learning new and exciting stuff everyday keeps me motivated towards
+            my goal.
           </p>
         </section>
       </main>
@@ -106,5 +125,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

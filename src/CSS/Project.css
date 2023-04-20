@@ -58,3 +58,10 @@ a {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+
+@media only screen and (max-width: 430px) {
+  .container-project, .preview img{
+    width: 320px;
+  }
+}
